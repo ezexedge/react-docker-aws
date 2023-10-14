@@ -6,3 +6,25 @@ before_install:
 
 script:
   - docker run -e CI=true ezexedge/react-docker-aws npm run test
+
+
+deploy:
+  provider: elasticbeanstalk
+  # we extract the region from the link generated in AWS > elastic beanstalk instance:
+  # http://dockerreact-env.eba-fmbmnfye.us-east-2.elasticbeanstalk.com/
+  region: "us-east-1"
+  # the name we used in the AWS > elastic beanstalk instance creation
+  app: "docker-react"
+  # the environtment name generated from AWS > elastic beanstalk instance
+  env: "docker-react-env"
+  # AWS services> search 's3' bucket > elasticbeanstalk-us-east-2-700014740564
+  bucket_name: "elasticbeanstalk-us-east-1-284525298520"
+  # the name we used in the AWS > elastic beanstalk instance creation
+  bucket_path: "docker-react"
+  # any time we push new code only to the 'master' branch,
+  # not the feature branch, then deploy
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+
