@@ -16,7 +16,7 @@ deploy:
   # the name we used in the AWS > elastic beanstalk instance creation
   app: "docker-react"
   # the environtment name generated from AWS > elastic beanstalk instance
-  env: "docker-react-env"
+  env: "Docker-react-env"
   # AWS services> search 's3' bucket > elasticbeanstalk-us-east-2-700014740564
   bucket_name: "elasticbeanstalk-us-east-1-284525298520"
   # the name we used in the AWS > elastic beanstalk instance creation
