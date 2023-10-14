@@ -24,7 +24,7 @@ deploy:
   # any time we push new code only to the 'master' branch,
   # not the feature branch, then deploy
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
 
